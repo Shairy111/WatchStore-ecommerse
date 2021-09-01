@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "variants",
+  "info": {
+    "name": "variant",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "size": {
+      "type": "enumeration",
+      "enum": [
+        "small",
+        "medium",
+        "large"
+      ]
+    },
+    "band": {
+      "type": "enumeration",
+      "enum": [
+        "leather",
+        "metal",
+        "chain"
+      ]
+    },
+    "watch": {
+      "via": "variants",
+      "model": "watch"
+    },
+    "qty": {
+      "type": "integer",
+      "default": 1
+    },
+    "color": {
+      "type": "string",
+      "required": true
+    },
+    "variant_image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

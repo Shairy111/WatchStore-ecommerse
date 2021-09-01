@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "watches",
+  "info": {
+    "name": "watch",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "on_sale": {
+      "type": "boolean"
+    },
+    "variants": {
+      "via": "watch",
+      "collection": "variant"
+    },
+    "salePercent": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "brand": {
+      "via": "watches",
+      "model": "brand"
+    },
+    "category": {
+      "via": "watches",
+      "model": "category"
+    },
+    "qty": {
+      "type": "integer",
+      "default": 1,
+      "required": true
+    }
+  }
+}
