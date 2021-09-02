@@ -1,4 +1,4 @@
-require("dotenv").config()
+// require("dotenv").config()
 module.exports = ({ env }) => ({
     // ...
     upload: {
@@ -18,4 +18,4 @@ module.exports = ({ env }) => ({
     // ...
   });
 
-  console.log(process.env.CLOUDINARY_NAME)
+ 
