@@ -12,5 +12,9 @@ module.exports = ({ env }) => ({
         delete: {},
       },
     },
+
+    
     // ...
   });
+
+  console.log(process.env.CLOUDINARY_NAME)
