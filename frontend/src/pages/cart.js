@@ -31,7 +31,7 @@ function Cart() {
         
   
       {/* <CartMain/> */}
-      <Checkout/>
+      {/* <Checkout/> */}
       </Grid>
 
       
