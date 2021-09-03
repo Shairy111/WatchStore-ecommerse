@@ -20,8 +20,9 @@ function Contact({ move }) {
   const classes = useStyles()
 
 
+  let savedValues 
   if (typeof window !== 'undefined') {
-    let savedValues = JSON.parse(localStorage.getItem("ContactValues"))
+    savedValues = JSON.parse(localStorage.getItem("ContactValues"))
 }
   
   //ContactValues save it into variable
