@@ -20,8 +20,9 @@ function Address({ move }) {
   const classes = useStyles()
 
 
+  let savedValues
   if (typeof window !== 'undefined') {
-    let savedValues = JSON.parse(localStorage.getItem("AddressValues"))
+    savedValues = JSON.parse(localStorage.getItem("AddressValues"))
 }
   
   
