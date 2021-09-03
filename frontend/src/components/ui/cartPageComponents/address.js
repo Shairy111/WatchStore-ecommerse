@@ -20,7 +20,10 @@ function Address({ move }) {
   const classes = useStyles()
 
 
-  let savedValues = JSON.parse(localStorage.getItem("AddressValues"))
+  if (typeof window !== 'undefined') {
+    let savedValues = JSON.parse(localStorage.getItem("AddressValues"))
+}
+  
   
   
   const [address , setAddress] = useState(savedValues === null ? "" : JSON.parse(localStorage.getItem("AddressValues")).address)
