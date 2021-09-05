@@ -16,14 +16,19 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+
+
+
 function Contact({ move }) {
   const classes = useStyles()
-
 
   let savedValues 
   if (typeof window !== 'undefined') {
     savedValues = JSON.parse(localStorage.getItem("ContactValues"))
-}
+  }else{
+  saveValues = null
+  }
+
   
   //ContactValues save it into variable
   
