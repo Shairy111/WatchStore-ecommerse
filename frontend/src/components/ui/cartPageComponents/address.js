@@ -16,6 +16,8 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+
+
 function Address({ move }) {
   const classes = useStyles()
 
@@ -23,7 +25,10 @@ function Address({ move }) {
   let savedValues
   if (typeof window !== 'undefined') {
     savedValues = JSON.parse(localStorage.getItem("AddressValues"))
-}
+  }
+  else{
+    savedValues = null
+  }
   
   
   
