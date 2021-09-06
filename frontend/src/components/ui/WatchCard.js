@@ -1,9 +1,9 @@
-import React from "react"
-import { makeStyles } from "@material-ui/core/styles"
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
 
-import Button from "@material-ui/core/Button"
-import Typography from "@material-ui/core/Typography"
-import { Link } from "gatsby"
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import { Link } from "gatsby";
 
 const useStyles = makeStyles({
   // root: {
@@ -42,7 +42,7 @@ const useStyles = makeStyles({
     zIndex: "5",
     position: "absolute",
     backgroundColor: "#ff8400",
-    color: "#ffffff"
+    color: "#ffffff",
   },
   description: {},
   watchName: {},
@@ -55,12 +55,12 @@ const useStyles = makeStyles({
   new: {
     paddingBottom: "3em",
   },
-})
+});
 
 const calculateNewPrice = (oldPrice, salePercent) => {
-  const newPrice = oldPrice - salePercent
-  return newPrice
-}
+  const newPrice = oldPrice - salePercent;
+  return newPrice;
+};
 
 function WatchCard({
   watchName,
@@ -68,9 +68,9 @@ function WatchCard({
   ratings,
   oldPrice,
   salePercent,
-  path
+  path,
 }) {
-  const classes = useStyles()
+  const classes = useStyles();
 
   // oldPrice = 100
   // salePercent = 50
@@ -89,11 +89,11 @@ function WatchCard({
         ) : null}
 
         <Link to={path}>
-        <div className={classes.cardImage}>
-          <img className={classes.image} src={ImageUrl} alt="watch Picture" />
-        </div>
+          <div className={classes.cardImage}>
+            <img className={classes.image} src={ImageUrl} alt="watch Picture" />
+          </div>
         </Link>
-        
+
         <div className={classes.description}>
           <div className={classes.watchName}>
             <Typography variant="h3">{watchName}</Typography>
@@ -101,13 +101,12 @@ function WatchCard({
           </div>
 
           <div className={classes.pricing}>
+            {salePercent ? (
+              <Typography variant="body1" className={classes.old}>
+                Rs {oldPrice}/-
+              </Typography>
+            ) : null}
 
-            {salePercent ? <Typography variant="body1" className={classes.old}>
-              Rs {oldPrice}/-
-            </Typography> : null}
-            
-
-         
             <Typography variant="body1" className={classes.new}>
               Rs {calculateNewPrice(oldPrice, salePercent)}/-
             </Typography>
@@ -115,7 +114,7 @@ function WatchCard({
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default WatchCard
+export default WatchCard;
