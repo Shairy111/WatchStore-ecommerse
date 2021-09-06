@@ -33,7 +33,7 @@ function Products() {
       {/* some code for filter and sort  */}
       <Grid container justifyContent="center">
         {allProducts.allStrapiWatch.nodes.slice((page-1)*productPerPage,page*productPerPage).map((node, i) => {
-          const fullUrl = url + node.images[0].url
+          const fullUrl = node.images[0].url
           return (
             <>
               <Grid item>

@@ -34,11 +34,11 @@ function Brands() {
     }
   `)
 
-  const url = process.env.GATSBY_STRAPI_URL
+  
   return (
     <>
       {brands.allStrapiBrand.nodes.map((node, i) => {
-        const fullUrl = url + node.thumbnail.url
+        const fullUrl = node.thumbnail.url
         return (
           <>
             <Link to={`/brands/${node.brandName.toLowerCase()}`}>
