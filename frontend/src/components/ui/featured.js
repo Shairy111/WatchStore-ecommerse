@@ -23,7 +23,7 @@ function Featured() {
           }
           `)
 
-          const url = process.env.GATSBY_STRAPI_URL
+          
     return (
 
 
@@ -34,13 +34,13 @@ function Featured() {
             <Grid container justifyContent="flex-start">
               
                 {featuredProducts.allStrapiWatch.nodes.map((node , idx) => {
-            const fullUrl = url + node.images[0].url
+            const fullUrl = node.images[0].url
             return (
             
             
             <>
             <Grid key={idx} item>
-            <WatchCard  watchName={node.name} ImageUrl={fullUrl} oldPrice={node.price} salePercent={node.salePercent}/>
+            <WatchCard  watchName={node.name} ImageUrl={fullUrl} oldPrice={node.price} salePercent={node.salePercent} path={`/${node.name}/details`}/>
             </Grid>
              
             </>

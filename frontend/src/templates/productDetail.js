@@ -43,7 +43,7 @@ function ProductDetail({ pageContext }) {
     localStorage.setItem("recentlyViewed", JSON.stringify(recentlyViewed))
   }, [])
 
-  const url = process.env.GATSBY_STRAPI_URL
+
 
   return (
     <>
@@ -60,7 +60,7 @@ function ProductDetail({ pageContext }) {
                 <Grid item>
                   <Carousel autoPlay="true">
                     {images.map(image => {
-                      const fullUrl = url + image.url
+                      const fullUrl = image.url
                       return (
                         <div>
                           <img src={fullUrl} />
